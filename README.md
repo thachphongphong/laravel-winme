@@ -1,4 +1,4 @@
-README
+#build
 - docker build -t laravel-winme .
 
 #defaut

@@ -18,7 +18,7 @@ RUN /bin/chown www-data:www-data -R /var/www/laravel/storage /var/www/laravel/bo
 # Add the composer.json
 ADD composer.json /root/.composer/composer.json
     # run the install
-RUN composer global install
+RUN composer global install --no-scripts --no-autoloader
 
 
 EXPOSE 80

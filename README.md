@@ -4,7 +4,7 @@
 #defaut
 - docker run -p 80:80 -p 443:443 -d laravel-winme
 
-#mount with exist code in app code: /Users/linhdo/WORKSPACES/blog/
+#mount with exist code in app code:
 - docker run -p 80:80 -p 443:443 -v D:/WINME/code-winme/:/var/www/laravel/ -d laravel-winme
 
 #custom port

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 104.199.197.29
+  ports:
+    - port: 80
+  selector:
+    name: backend-pod
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2  # Clean-up old Replica Sets deployed; only keep previous 3.
+  # Pod template (contains same fields as a normal Pod)
+  template:
+    metadata:
+      labels:
+        name: backend-pod
+    spec:
+      containers:
+        - name: backend
+          image: gcr.io/winme-147814/winme-backend:latest
+          ports:
+            - containerPort: 80

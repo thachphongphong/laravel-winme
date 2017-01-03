@@ -10,5 +10,5 @@
 #custom port
 - docker run -p 8080:80 -p 8443:443 -v D:/WINME/code-winme/:/var/www/laravel/ -d laravel-winme
 
-# Anh chạy linux nên cài laravel qua comand line:
+# comand line:
 - composer create-project --prefer-dist laravel/laravel blog
